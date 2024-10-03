@@ -5,20 +5,43 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
     combos {
         compatible = "zmk,combos";
 
-        tilde {
+        tilde_combo {
             bindings = <&kp TILDE>;
             key-positions = <15 16>;
         };
 
-        single_quotation {
+        single_quotation_combo {
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <19 20>;
+        };
+
+        media_combo {
+            bindings = <&mo 6>;
+            key-positions = <38 39>;
+        };
+    };
+
+    macros {
+        vscode_format_code: vscode_format_code {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LSHIFT>,
+                <&macro_tap>,
+                <&kp F>,
+                <&macro_release>,
+                <&kp LSHFT &kp LCTRL>;
+
+            label = "VSCODE_FORMAT_CODE";
         };
     };
 
@@ -33,44 +56,77 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E     &kp R           &kp T          &kp Y            &kp U         &kp I       &kp O    &kp P     &kp GRAVE
-&kp TAB     &kp A  &kp S  &kp D     &kp F           &kp G          &kp H            &kp J         &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LCTRL   &kp Z  &kp X  &kp C     &kp V           &kp B          &kp N            &kp M         &kp COMMA   &kp DOT  &kp FSLH  &kp ENTER
-                          &kp LGUI  &sk LEFT_SHIFT  &lt 2 SPACE    &lt 1 BACKSPACE  &lt 3 DELETE  &caps_word
+&kp TAB    &kp Q  &kp W  &kp E        &kp R         &kp T          &kp Y            &kp U         &kp I       &kp O    &kp P     &kp GRAVE
+&mo 1      &kp A  &kp S  &kp D        &kp F         &kp G          &kp H            &kp J         &kp K       &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C        &kp V         &kp B          &kp N            &kp M         &kp COMMA   &kp DOT  &kp FSLH  &kp ENTER
+                         &key_repeat  &lt 4 ESCAPE  &lt 5 SPACE    &lt 2 BACKSPACE  &lt 2 DELETE  &caps_word
             >;
         };
 
-        layer_1 {
+        WINDOW_MANAGEMENT {
             bindings = <
-&none  &none         &none         &none      &none           &none        &none             &kp LC(LEFT)  &kp UP_ARROW  &kp LC(RIGHT)  &none  &none
-&none  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &none        &none             &kp LEFT      &kp DOWN      &kp RIGHT      &none  &none
-&none  &kp LC(Z)     &kp LC(X)     &kp LC(C)  &kp LC(V)       &kp LC(B)    &kp K_PLAY_PAUSE  &kp HOME      &none         &kp END        &none  &none
-                                   &none      &none           &none        &none             &none         &none
+&none  &none  &none             &kp LG(E)  &none                &kp LA(LC(T))    &none      &none         &kp LG(UP_ARROW)  &none          &kp PRINTSCREEN  &none
+&none  &none  &none             &none      &vscode_format_code  &none            &kp LG(H)  &kp LG(LEFT)  &kp LG(DOWN)      &kp LG(RIGHT)  &none            &none
+&none  &none  &kp K_CALCULATOR  &none      &none                &kp C_AC_HOME    &none      &kp LG(M)     &none             &kp LG(COMMA)  &none            &none
+                                &none      &none                &none            &none      &none         &none
+            >;
+
+            label = "WIN";
+        };
+
+        SYMBOLS {
+            bindings = <
+&none  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)    &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(N0)         &none
+&none  &none             &none             &none             &kp BACKSLASH     &kp PIPE            &kp MINUS         &kp EQUAL         &kp PLUS          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DOUBLE_QUOTES
+&none  &none             &none             &none             &none             &kp TILDE           &kp TILDE         &kp UNDER         &none             &kp LEFT_BRACE    &kp RIGHT_BRACE    &none
+                                           &none             &none             &kp SPACE           &kp BACKSPACE     &none             &kp DOT
+            >;
+
+            label = "SYM";
+        };
+
+        NAVIGATION {
+            bindings = <
+&none         &none         &none         &none      &none           &none    &none             &kp LC(LEFT)  &kp UP_ARROW  &kp LC(RIGHT)  &none  &none
+&kp CAPSLOCK  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &none    &none             &kp LEFT      &kp DOWN      &kp RIGHT      &none  &none
+&none         &kp LC(Z)     &kp LC(X)     &kp LC(C)  &kp LC(V)       &none    &kp K_PLAY_PAUSE  &kp HOME      &none         &kp END        &none  &none
+                                          &none      &none           &none    &none             &none         &none
             >;
 
             label = "NAV";
         };
 
-        layer_2 {
+        FUNCTION {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none  &none
-                     &none  &none  &none    &none  &kp NUMBER_0  &none
+&none  &kp F1     &kp F2     &kp F3     &kp F4      &kp F5       &kp F6  &kp F7      &kp F8     &kp F9    &kp F10   &kp F11
+&none  &kp LWIN   &kp LALT   &kp LCTRL  &kp LSHIFT  &none        &none   &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp F12
+&none  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)   &kp LC(B)    &none   &none       &none      &none     &none     &none
+                             &none      &none       &none        &none   &none       &none
+            >;
+
+            label = "FUN";
+        };
+
+        NUMBER {
+            bindings = <
+&none  &none      &none     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none    &none          &kp N7        &kp N8        &kp N9        &none  &none
+&none  &kp SLASH  &kt STAR  &kp MINUS             &kp PLUS               &none    &none          &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none  &none
+&none  &none      &none     &none                 &none                  &none    &none          &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none  &kp EQUAL
+                            &none                 &none                  &none    &kp BACKSPACE  &kp N0        &kp DOT
             >;
 
             label = "NUM";
         };
 
-        layer_3 {
+        MEDIA {
             bindings = <
-&none  &none          &kp LT                &kp DOLLAR         &kp GREATER_THAN       &none       &none        &kp LEFT_BRACKET  &kp UNDERSCORE  &kp RIGHT_BRACKET  &none     &none
-&none  &kp BACKSLASH  &kp LEFT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp HASH    &kp PERCENT  &kp LEFT_BRACE    &kp EQUAL       &kp RIGHT_BRACE    &kp PIPE  &none
-&none  &none          &kp COLON             &kp ASTRK          &kp PLUS               &none       &none        &kp AMPS          &kp CARET       &kp TILDE          &none     &none
-                                            &none              &none                  &none       &none        &none             &none
+&bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans  &trans    &trans  &trans             &trans  &trans           &trans  &bt BT_CLR_ALL
+&trans        &trans        &trans  &trans  &trans  &trans    &trans  &kp K_PREVIOUS     &trans  &kp K_FORWARD    &trans  &trans
+&trans        &trans        &trans  &trans  &trans  &trans    &trans  &kp K_VOLUME_DOWN  &trans  &kp K_VOLUME_UP  &trans  &trans
+                                    &trans  &trans  &trans    &trans  &trans             &trans
             >;
 
-            label = "SYM";
+            label = "MEDIA";
         };
     };
 };
