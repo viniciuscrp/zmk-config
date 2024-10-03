@@ -63,19 +63,19 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB  &kp Q  &kp W  &kp E        &kp R         &kp T          &kp Y            &kp U         &kp I       &kp O    &kp P     &kp GRAVE
-&mo 1    &kp A  &kp S  &kp D        &kp F         &kp G          &kp H            &kp J         &kp K       &kp L    &kp SEMI  &kp SQT
-&mo 6    &kp Z  &kp X  &kp C        &kp V         &kp B          &kp N            &kp M         &kp COMMA   &kp DOT  &kp FSLH  &kp ENTER
-                       &key_repeat  &lt 4 ESCAPE  &lt 5 SPACE    &lt 2 BACKSPACE  &lt 3 DELETE  &caps_word
+&kp TAB  &kp Q  &kp W  &kp E        &kp R             &kp T          &kp Y            &kp U             &kp I        &kp O    &kp P     &kp GRAVE
+&mo 1    &kp A  &kp S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G          &kp H            &mt LEFT_SHIFT J  &mt LCTRL K  &kp L    &kp SEMI  &kp SQT
+&mo 6    &kp Z  &kp X  &kp C        &kp V             &kp B          &kp N            &kp M             &kp COMMA    &kp DOT  &kp FSLH  &kp ENTER
+                       &key_repeat  &lt 4 ESCAPE      &lt 5 SPACE    &lt 2 BACKSPACE  &lt 3 DELETE      &caps_word
             >;
         };
 
         WINDOW_MANAGEMENT {
             bindings = <
-&none  &none  &none             &kp LG(E)  &none                &kp LA(LC(T))    &none      &none         &kp LG(UP_ARROW)  &none          &kp PRINTSCREEN  &none
-&none  &none  &none             &none      &vscode_format_code  &none            &kp LG(H)  &kp LG(LEFT)  &kp LG(DOWN)      &kp LG(RIGHT)  &none            &none
-&none  &none  &kp K_CALCULATOR  &none      &none                &kp C_AC_HOME    &none      &kp LG(M)     &none             &kp LG(COMMA)  &none            &none
-                                &none      &none                &none            &none      &none         &none
+&none  &none  &none                &kp LG(E)  &none                &kp LA(LC(T))    &none      &none         &kp LG(UP_ARROW)  &none          &kp PRINTSCREEN  &none
+&none  &none  &none                &none      &vscode_format_code  &none            &kp LG(H)  &kp LG(LEFT)  &kp LG(DOWN)      &kp LG(RIGHT)  &none            &none
+&none  &none  &kp C_AL_CALCULATOR  &none      &none                &kp C_AC_HOME    &none      &kp LG(M)     &none             &kp LG(COMMA)  &none            &none
+                                   &none      &none                &none            &none      &none         &none
             >;
 
             label = "WIN";
