@@ -42,11 +42,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCTRL &kp LSHIFT>,
+                <&kp LEFT_ALT &kp LSHIFT>,
                 <&macro_tap>,
                 <&kp F>,
                 <&macro_release>,
-                <&kp LSHFT &kp LCTRL>;
+                <&kp LSHFT &kp LALT>;
 
             label = "VSCODE_FORMAT_CODE";
         };
