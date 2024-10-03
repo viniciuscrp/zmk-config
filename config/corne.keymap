@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     combos {
@@ -120,10 +121,10 @@
 
         MEDIA {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans  &trans    &trans  &trans             &trans  &trans           &trans  &bt BT_CLR_ALL
-&trans        &trans        &trans  &trans  &trans  &trans    &trans  &kp K_PREVIOUS     &trans  &kp K_FORWARD    &trans  &trans
-&trans        &trans        &trans  &trans  &trans  &trans    &trans  &kp K_VOLUME_DOWN  &trans  &kp K_VOLUME_UP  &trans  &trans
-                                    &trans  &trans  &trans    &trans  &trans             &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans        &trans          &trans  &trans             &trans  &trans           &trans  &bt BT_CLR_ALL
+&trans        &trans        &trans  &trans  &trans        &trans          &trans  &kp K_PREVIOUS     &trans  &kp K_FORWARD    &trans  &trans
+&trans        &trans        &trans  &trans  &out OUT_USB  &out OUT_BLE    &trans  &kp K_VOLUME_DOWN  &trans  &kp K_VOLUME_UP  &trans  &trans
+                                    &trans  &trans        &trans          &trans  &trans             &trans
             >;
 
             label = "MEDIA";
