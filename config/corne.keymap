@@ -46,11 +46,6 @@
             bindings = <&sk LEFT_SHIFT>;
             key-positions = <20 21>;
         };
-
-        escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <1 2>;
-        };
     };
 
     macros {
@@ -80,66 +75,38 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB      &kp Q       &kp W       &kp E        &kp R             &kp T          &kp Y          &kp U         &kp I        &kp O       &kp P               &kp GRAVE
-&caps_word   &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G          &kp H          &mt LSHIFT J  &mt LCTRL K  &mt LALT L  &mt LCMD SEMICOLON  &kp SQT
-&key_repeat  &kp Z       &kp X       &kp C        &kp V             &kp B          &kp N          &kp M         &kp COMMA    &kp DOT     &kp FSLH            &kp ENTER
-                                     &mo 2        &mo 1             &lt 4 SPACE    &kp BACKSPACE  &lt 3 DELETE  &mo 5
+&kp TAB     &kp Q  &kp W  &kp E       &kp R  &kp T        &kp Y          &kp U  &kp I      &kp O    &kp P          &kp GRAVE
+&kp ESCAPE  &kp A  &kp S  &kp D       &kp F  &kp G        &kp H          &kp J  &kp K      &kp L    &kp SEMICOLON  &kp SQT
+&lt 3 LGUI  &kp Z  &kp X  &kp C       &kp V  &kp B        &kp N          &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp ENTER
+                          &sk LSHIFT  &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &kp LCTRL
             >;
         };
 
-        SYMBOLS {
+        SYM {
             bindings = <
-&kp ESCAPE  &kp EXCL      &kp AT        &kp HASH   &kp DOLLAR  &kp PERCENT      &kp CARET      &kp AMPERSAND  &kp STAR  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none
-&none       &kp LEFT_GUI  &sk LEFT_ALT  &sk LCTRL  &sk LSHIFT  &kp BACKSLASH    &kp MINUS      &kp EQUAL      &kp PLUS  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none
-&none       &none         &none         &none      &none       &kp PIPE         &none          &kp UNDER      &none     &kp LEFT_BRACE        &kp RIGHT_BRACE        &none
-                                        &none      &none       &none            &kp BACKSPACE  &none          &none
+&none   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5           &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &trans
+&trans  &trans  &trans  &trans  &trans  &kp PIPE         &kp MINUS  &kp EQUAL  &kp PLUS  &kp LBKT  &kp RBKT  &trans
+&trans  &trans  &trans  &trans  &trans  &kp BACKSLASH    &trans     &kp UNDER  &trans    &trans    &trans    &trans
+                        &trans  &trans  &kp LSHFT        &trans     &trans     &trans
             >;
-
-            label = "SYM";
         };
 
-        FUNCTION {
+        FUN {
             bindings = <
-&none  &none         &none     &none      &none      &none    &none  &kp F7  &kp F8  &kp F9  &kp F10  &none
-&none  &kp LEFT_WIN  &kp LALT  &sk LCTRL  &sk LSHFT  &none    &none  &kp F4  &kp F5  &kp F6  &kp F11  &none
-&none  &none         &none     &none      &none      &none    &none  &kp F1  &kp F2  &kp F3  &kp F12  &none
-                               &none      &none      &none    &none  &none   &none
+&trans  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5    &kp F6  &kp F7    &kp F8        &kp F9          &kp F10    &kp F11
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &kp LEFT  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp F12
+&trans  &trans    &trans    &trans     &trans     &trans    &trans  &kp HOME  &trans        &trans          &kp END    &trans
+                            &trans     &trans     &trans    &trans  &trans    &trans
             >;
-
-            label = "FUN";
-        };
-
-        NAVIGATION {
-            bindings = <
-&none  &none         &none     &none             &none           &none        &none   &none           &none         &none     &none      &none
-&none  &kp LEFT_GUI  &kp LALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none        &none   &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN  &kp RIGHT  &none
-&none  &none         &none     &none             &none           &none        &none   &kp HOME        &none         &none     &kp END    &none
-                               &none             &trans          &kp SPACE    &trans  &trans          &none
-            >;
-
-            label = "NAV";
-        };
-
-        NUMBER {
-            bindings = <
-&none  &none      &none     &none      &none      &none      &none         &kp N7        &kp NUMBER_8  &kp NUMBER_9  &none         &none
-&none  &kp SLASH  &kp STAR  &kp MINUS  &kp PLUS   &none      &kp NUMBER_0  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp NUMBER_0  &none
-&none  &none      &none     &none      &none      &none      &none         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
-                            &none      &kp EQUAL  &kp DOT    &trans        &trans        &none
-            >;
-
-            label = "NUM";
         };
 
         MEDIA {
             bindings = <
-&bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none         &bootloader     &none             &none           &none            &none              &none       &none
-&none           &none         &none         &none         &none         &none           &none             &kp C_PREVIOUS  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_NEXT  &none
-&none           &none         &none         &none         &out OUT_USB  &out OUT_BLE    &kp C_PLAY_PAUSE  &none           &none            &none              &none       &soft_off
-                                            &none         &none         &none           &none             &none           &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4         &trans    &trans    &trans          &trans           &out OUT_TOG       &trans      &trans
+&trans        &trans        &trans        &trans          &vscode_format_code  &trans    &trans    &kp C_PREVIOUS  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_NEXT  &trans
+&trans        &trans        &trans        &bt BT_CLR_ALL  &trans               &trans    &kp C_PP  &trans          &trans           &trans             &trans      &trans
+                                          &trans          &trans               &trans    &trans    &trans          &trans
             >;
-
-            label = "MED";
         };
     };
 };
