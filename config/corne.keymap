@@ -25,26 +25,31 @@
         tilde_combo {
             bindings = <&kp TILDE>;
             key-positions = <15 16>;
+            layers = <0>;
         };
 
         single_quotation_combo {
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <19 20>;
+            layers = <0>;
         };
 
         format_vs_code {
             bindings = <&vscode_format_code>;
             key-positions = <14 15 16>;
+            layers = <0>;
         };
 
         sticky_shift_left {
             bindings = <&sk LEFT_SHIFT>;
             key-positions = <14 15>;
+            layers = <0>;
         };
 
         sticky_key_right {
             bindings = <&sk LEFT_SHIFT>;
             key-positions = <20 21>;
+            layers = <0>;
         };
     };
 
@@ -75,8 +80,8 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB     &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y          &kp U         &kp I       &kp O    &kp P          &kp GRAVE
-&kp ESCAPE  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H          &kp J         &kp K       &kp L    &kp SEMICOLON  &kp SQT
+&kp ESCAPE  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y          &kp U         &kp I       &kp O    &kp P          &kp GRAVE
+&kp TAB     &kp A  &kp S  &kp D      &kp F  &kp G        &kp H          &kp J         &kp K       &kp L    &kp SEMICOLON  &kp SQT
 &lt 3 LGUI  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N          &kp M         &kp COMMA   &kp DOT  &kp FSLH       &kp ENTER
                           &sk LCTRL  &mo 1  &kp SPACE    &kp BACKSPACE  &lt 2 DELETE  &kp LSHIFT
             >;
@@ -84,9 +89,9 @@
 
         SYM {
             bindings = <
-&none   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5           &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &trans
-&trans  &trans     &trans     &trans     &trans     &kp PIPE         &kp MINUS  &kp EQUAL  &kp PLUS  &kp LBKT  &kp RBKT  &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp BACKSLASH    &trans     &kp UNDER  &trans    &trans    &trans    &trans
+&none   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5           &kp N6     &kp N7     &kp N8    &kp N9          &kp N0           &trans
+&trans  &trans     &trans     &trans     &trans     &kp PIPE         &kp MINUS  &kp EQUAL  &kp PLUS  &kp LBKT        &kp RBKT         &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp BACKSLASH    &trans     &kp UNDER  &trans    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
                               &trans     &trans     &kp LSHFT        &trans     &trans     &trans
             >;
         };
