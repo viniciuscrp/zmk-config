@@ -40,16 +40,14 @@
             layers = <0>;
         };
 
-        sticky_shift_left {
-            bindings = <&sk LEFT_SHIFT>;
-            key-positions = <14 15>;
-            layers = <0>;
+        functions_layer {
+            bindings = <&mo 3>;
+            key-positions = <37 40>;
         };
 
-        sticky_key_right {
-            bindings = <&sk LEFT_SHIFT>;
-            key-positions = <20 21>;
-            layers = <0>;
+        numbers_layer {
+            bindings = <&mo 5>;
+            key-positions = <38 39>;
         };
     };
 
@@ -80,28 +78,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E        &kp R  &kp T              &kp Y          &kp U         &kp I       &kp O    &kp P          &kp GRAVE
-&kp TAB     &kp A  &kp S  &kp D        &kp F  &kp G              &kp H          &kp J         &kp K       &kp L    &kp SEMICOLON  &kp SQT
-&lt 3 LGUI  &kp Z  &kp X  &kp C        &kp V  &kp B              &kp N          &kp M         &kp COMMA   &kp DOT  &kp FSLH       &kp ENTER
-                          &key_repeat  &mo 1  &mt LCTRL SPACE    &kp BACKSPACE  &lt 2 DELETE  &caps_word
-            >;
-        };
-
-        SYM {
-            bindings = <
-&none  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)       &kp LS(N6)     &kp LS(N7)  &kp LS(N8)  &kp LS(N9)      &kp LS(N0)       &none
-&none  &none       &none       &none       &none       &kp PIPE         &kp MINUS      &kp EQUAL   &kp PLUS    &kp LBKT        &kp RBKT         &none
-&none  &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp BACKSLASH    &none          &kp UNDER   &none       &kp LEFT_BRACE  &kp RIGHT_BRACE  &none
-                               &none       &none       &none            &kp BACKSPACE  &none       &none
-            >;
-        };
-
-        FUN {
-            bindings = <
-&none  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5     &kp N6         &kp N7    &kp N8        &kp N9          &kp N0     &none
-&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp BACKSPACE  &kp LEFT  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp F12
-&none  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp F6         &kp F7    &kp F8        &kp F9          &kp F10    &kp F11
-                           &none      &kp HOME   &kp END    &none          &none     &none
+&kp ESCAPE  &kp Q       &kp W       &kp E        &kp R         &kp T        &kp Y          &kp U         &kp I        &kp O           &kp P               &kp GRAVE
+&kp TAB     &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &kp G        &kp H          &mt LSHIFT J  &mt LCTRL K  &mt LEFT_ALT L  &mt LGUI SEMICOLON  &kp SQT
+&mo 1       &kp Z       &kp X       &kp C        &kp V         &kp B        &kp N          &kp M         &kp COMMA    &kp DOT         &kp FSLH            &kp ENTER
+                                    &key_repeat  &mo 4         &kp SPACE    &kp BACKSPACE  &mo 2         &caps_word
             >;
         };
 
@@ -112,6 +92,50 @@
 &none         &none         &none         &bt BT_CLR_ALL  &none                &none    &kp C_PP  &none           &none            &none              &none       &none
                                           &none           &none                &none    &none     &none           &none
             >;
+        };
+
+        NAVIGATION {
+            bindings = <
+&trans  &trans     &trans     &trans     &trans     &trans    &kp PAGE_UP    &kp LC(LEFT)    &kp UP_ARROW  &kp LC(RIGHT)    &trans      &trans
+&trans  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans    &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &kp DELETE  &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &none     &none          &kp HOME        &kp TAB       &kp END          &trans      &kp ENTER
+                              &trans     &trans     &trans    &kp BSPC       &trans          &trans
+            >;
+
+            label = "NAV";
+        };
+
+        FUNCTION {
+            bindings = <
+&trans  &trans     &trans     &trans     &trans     &trans    &kp F12  &kp F7  &kp F8  &kp F9  &trans  &trans
+&trans  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans    &kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans
+                              &trans     &trans     &trans    &trans   &trans  &trans
+            >;
+
+            label = "FUN";
+        };
+
+        SYMBOLS {
+            bindings = <
+&trans  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)    &kp EQUAL      &kp GRAVE   &kp LS(SEMI)  &kp SEMI  &kp LS(EQUAL)  &trans
+&trans  &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &kp LS(N6)    &kp LS(N8)     &kp LS(N9)  &kp LS(LBKT)  &kp LBKT  &kp MINUS      &trans
+&trans  &trans      &trans      &kp BSLH    &kp PIPE    &kp LS(N7)    &kp LS(GRAVE)  &kp LS(N0)  &kp LS(RBKT)  &kp RBKT  &kp LS(MINUS)  &trans
+                                &trans      &trans      &trans        &trans         &trans      &trans
+            >;
+
+            label = "SYM";
+        };
+
+        NUMBERS {
+            bindings = <
+&trans  &trans     &trans     &trans     &trans     &trans    &kp EQUAL   &kp N7  &kp N8  &kp N9  &kp LS(EQUAL)  &trans
+&trans  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans    &kp LS(N8)  &kp N4  &kp N5  &kp N6  &kp MINUS      &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans    &kp N0      &kp N1  &kp N2  &kp N3  &kp FSLH       &trans
+                              &trans     &trans     &trans    &kp BSPC    &trans  &trans
+            >;
+
+            label = "NUM";
         };
     };
 };
