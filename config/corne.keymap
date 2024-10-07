@@ -89,19 +89,19 @@
 
         SYM {
             bindings = <
-&none  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)       &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)      &kp LS(N0)       &none
-&none  &none       &none       &none       &none       &kp PIPE         &kp MINUS   &kp EQUAL   &kp PLUS    &kp LBKT        &kp RBKT         &none
-&none  &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp BACKSLASH    &none       &kp UNDER   &none       &kp LEFT_BRACE  &kp RIGHT_BRACE  &none
-                               &none       &none       &none            &none       &none       &none
+&none  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)       &kp LS(N6)     &kp LS(N7)  &kp LS(N8)  &kp LS(N9)      &kp LS(N0)       &none
+&none  &none       &none       &none       &none       &kp PIPE         &kp MINUS      &kp EQUAL   &kp PLUS    &kp LBKT        &kp RBKT         &none
+&none  &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp BACKSLASH    &none          &kp UNDER   &none       &kp LEFT_BRACE  &kp RIGHT_BRACE  &none
+                               &none       &none       &none            &kp BACKSPACE  &none       &none
             >;
         };
 
         FUN {
             bindings = <
-&none  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5     &kp N6  &kp N7    &kp N8        &kp N9          &kp N0     &none
-&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &none   &kp LEFT  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp F12
-&none  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp F6  &kp F7    &kp F8        &kp F9          &kp F10    &kp F11
-                           &none      &kp HOME   &kp END    &none   &none     &none
+&none  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5     &kp N6         &kp N7    &kp N8        &kp N9          &kp N0     &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp BACKSPACE  &kp LEFT  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp F12
+&none  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp F6         &kp F7    &kp F8        &kp F9          &kp F10    &kp F11
+                           &none      &kp HOME   &kp END    &none          &none     &none
             >;
         };
 
