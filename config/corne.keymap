@@ -11,10 +11,15 @@
 
 &mt {
     flavor = "tap-preferred";
-    quick-tap-ms = <150>;
+    tapping-term-ms = <200>;
 };
 
 &soft_off { hold-time-ms = <1000>; };
+
+&lt {
+    quick-tap-ms = <200>;
+    flavor = "hold-preferred";
+};
 
 / {
     combos {
@@ -154,12 +159,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        activate_num_layer {
-            if-layers = <2 4>;
-            then-layer = <5>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
