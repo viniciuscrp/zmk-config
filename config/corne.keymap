@@ -12,6 +12,7 @@
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
+    require-prior-idle-ms = <125>;
 };
 
 &soft_off { hold-time-ms = <1000>; };
@@ -19,6 +20,7 @@
 &lt {
     quick-tap-ms = <200>;
     flavor = "hold-preferred";
+    require-prior-idle-ms = <125>;
 };
 
 / {
