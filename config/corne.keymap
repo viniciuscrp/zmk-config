@@ -27,19 +27,19 @@
 
         tilde_combo {
             bindings = <&kp TILDE>;
-            key-positions = <15 16>;
+            key-positions = <3 4>;
             layers = <2>;
         };
 
         single_quotation_combo {
             bindings = <&kp SINGLE_QUOTE>;
-            key-positions = <19 20>;
+            key-positions = <7 8>;
             layers = <2>;
         };
 
         format_vs_code {
             bindings = <&vscode_format_code>;
-            key-positions = <14 15 16>;
+            key-positions = <2 3 4>;
             layers = <2>;
         };
     };
@@ -82,8 +82,8 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CEDILLA";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp SINGLE_QUOTE>, <&cedilla>;
+            tapping-term-ms = <300>;
+            bindings = <&kp C>, <&cedilla>;
         };
     };
 
@@ -99,9 +99,9 @@
 
             bindings = <
 &kp ESCAPE          &kp Q       &kp W       &kp E        &kp R         &kp T          &kp Y            &kp U         &kp I        &kp O           &kp P               &kp GRAVE
-&kp TAB             &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &kp G          &kp H            &mt LSHIFT J  &mt LCTRL K  &mt LEFT_ALT L  &mt LGUI SEMICOLON  &td_cedilla
-&td_shift_capsword  &kp Z       &kp X       &kp C        &kp V         &kp B          &kp N            &kp M         &kp COMMA    &kp DOT         &kp FSLH            &kp ENTER
-                                            &mo 1        &mo 4         &lt 3 SPACE    &lt 5 BACKSPACE  &mo 2         &key_repeat
+&kp TAB             &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &kp G          &kp H            &mt LSHIFT J  &mt LCTRL K  &mt LEFT_ALT L  &mt LGUI SEMICOLON  &kp SINGLE_QUOTE
+&td_shift_capsword  &kp Z       &kp X       &td_cedilla  &kp V         &kp B          &kp N            &kp M         &kp COMMA    &kp DOT         &kp FSLH            &kp ENTER
+                                            &mo 1        &mo 4         &lt 5 SPACE    &lt 3 BACKSPACE  &mo 2         &key_repeat
             >;
         };
 
