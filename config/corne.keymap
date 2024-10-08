@@ -20,7 +20,6 @@
 &lt {
     quick-tap-ms = <200>;
     flavor = "hold-preferred";
-    require-prior-idle-ms = <125>;
 };
 
 / {
