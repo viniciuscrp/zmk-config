@@ -17,7 +17,10 @@
     require-prior-idle-ms = <125>;
 };
 
-&sk { quick-release; };
+&sk {
+    quick-release;
+    release-after-ms = <3000>;
+};
 
 / {
     combos {
