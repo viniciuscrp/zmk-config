@@ -10,9 +10,8 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &mt {
-    flavor = "tap-unless-interrupted";
-    tapping-term-ms = <200>;
-    hold-trigger-key-positions = <13 14 15 16 19 20 21 22>;
+    flavor = "balanced";
+    require-prior-idle-ms = <125>;
 };
 
 &soft_off { hold-time-ms = <1000>; };
