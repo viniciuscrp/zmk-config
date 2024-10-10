@@ -139,9 +139,9 @@
 
         SYMBOLS {
             bindings = <
-&trans  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)    &kp EQUAL      &kp EQUAL   &kp LS(SEMI)  &kp SEMI  &kp LS(EQUAL)  &none
-&trans  &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &kp LS(N6)    &kp LS(N8)     &kp LS(N9)  &kp LS(LBKT)  &kp LBKT  &kp MINUS      &none
-&none   &none       &none       &kp BSLH    &kp PIPE    &kp LS(N7)    &kp LS(GRAVE)  &kp LS(N0)  &kp LS(RBKT)  &kp RBKT  &kp LS(MINUS)  &trans
+&trans  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)    &kp GRAVE      &kp EQUAL   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LS(EQUAL)  &none
+&trans  &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &kp LS(N6)    &kp LS(N8)     &kp LS(N9)  &kp LS(LBKT)      &kp LBKT           &kp MINUS      &none
+&none   &none       &none       &kp BSLH    &kp PIPE    &kp LS(N7)    &kp LS(GRAVE)  &kp LS(N0)  &kp LS(RBKT)      &kp RBKT           &kp LS(MINUS)  &trans
                                 &none       &trans      &trans        &trans         &trans      &trans
             >;
 
