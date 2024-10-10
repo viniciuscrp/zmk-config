@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &mt {
-    flavor = "balanced";
+    flavor = "tap-preferred";
     require-prior-idle-ms = <125>;
 };
 
@@ -18,7 +18,7 @@
 
 &lt {
     quick-tap-ms = <200>;
-    flavor = "hold-preferred";
+    flavor = "tap-preferred";
     require-prior-idle-ms = <125>;
 };
 
