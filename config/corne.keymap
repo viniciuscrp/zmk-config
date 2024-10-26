@@ -27,18 +27,23 @@
         compatible = "zmk,combos";
 
         ctrl_sticky {
-            bindings = <&sk LCTRL>;
+            bindings = <&sk LSHIFT>;
             key-positions = <19 20>;
         };
 
         shift_sticky {
-            bindings = <&sk LSHIFT>;
+            bindings = <&sk LCTRL>;
             key-positions = <20 21>;
         };
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <15 16>;
+        };
+
+        mod_caps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <37 40>;
         };
     };
 
