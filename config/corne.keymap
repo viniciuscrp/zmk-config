@@ -123,9 +123,9 @@
 
         MEDIA {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3    &bt BT_SEL 4         &kp LC(GRAVE)    &none     &none           &none            &none              &out OUT_BLE  &out OUT_USB
-&none         &none         &kp PRINTSCREEN  &none           &vscode_format_code  &none            &none     &kp C_PREVIOUS  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_NEXT    &none
-&none         &none         &none            &bt BT_CLR_ALL  &none                &none            &kp C_PP  &none           &none            &none              &none         &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3    &bt BT_SEL 4         &kp LC(GRAVE)    &none     &none           &kp C_VOLUME_UP    &none       &out OUT_BLE  &out OUT_USB
+&none         &none         &kp PRINTSCREEN  &none           &vscode_format_code  &none            &none     &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_NEXT  &none         &none
+&none         &none         &none            &bt BT_CLR_ALL  &none                &none            &kp C_PP  &none           &none              &none       &none         &none
                                              &none           &none                &none            &none     &none           &none
             >;
         };
@@ -143,10 +143,10 @@
 
         NAVIGATION {
             bindings = <
-&trans  &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                 &kp F6  &kp F7          &kp F8        &kp F9         &kp F10    &kp F11
-&trans  &kp LGUI   &kp LALT   &sk LCTRL  &sk LSHFT  &view_open_programs    &none   &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &kp F12
-&none   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &none                  &none   &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN  &kp END    &trans
-                              &none      &kp LSHFT  &trans                 &trans  &none           &none
+&trans  &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                 &kp F6         &kp F7          &kp UP_ARROW  &kp F8     &kp F9   &kp F10
+&trans  &kp LGUI   &kp LALT   &sk LCTRL  &sk LSHFT  &view_open_programs    &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp F11  &kp F12
+&none   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &none                  &kp PAGE_DOWN  &kp HOME        &none         &kp END    &none    &trans
+                              &none      &kp LSHFT  &trans                 &trans         &none           &none
             >;
 
             label = "NAV";
