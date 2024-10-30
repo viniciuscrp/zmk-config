@@ -63,7 +63,7 @@
             key-positions = <19 20>;
         };
 
-        undo_combo {
+        redo_combo {
             bindings = <&kp LC(Y)>;
             key-positions = <7 8>;
         };
