@@ -130,7 +130,7 @@
         NAVIGATION {
             bindings = <
 &trans  &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &kp F6  &kp F7          &kp F8        &kp F9         &kp F10    &kp F11
-&trans  &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT  &kp LG(G)    &none   &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &kp F12
+&trans  &kp LGUI   &kp LALT   &sk LCTRL  &sk LSHFT  &kp LG(G)    &none   &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &kp F12
 &none   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &none        &none   &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN  &kp END    &trans
                               &none      &kp LSHFT  &trans       &trans  &none           &none
             >;
@@ -141,7 +141,7 @@
         NUMBERS {
             bindings = <
 &none   &none      &none      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none       &kp N7  &kp N8  &kp N9  &kp LS(EQUAL)  &tog 4
-&trans  &sk LGUI   &sk LALT   &sk LCTRL             &sk LSHFT              &none     &kp LS(N8)  &kp N4  &kp N5  &kp N6  &kp MINUS      &none
+&trans  &kp LGUI   &kp LALT   &sk LCTRL             &sk LSHFT              &none     &kp LS(N8)  &kp N4  &kp N5  &kp N6  &kp MINUS      &none
 &none   &kp LC(Z)  &kp LC(X)  &kp LC(C)             &kp LC(V)              &none     &kp DOT     &kp N1  &kp N2  &kp N3  &kp FSLH       &trans
                               &none                 &none                  &trans    &trans      &kp N0  &none
             >;
