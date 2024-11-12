@@ -16,13 +16,10 @@
 
 &soft_off { hold-time-ms = <1000>; };
 
-&lt {
-    quick-tap-ms = <200>;
-    flavor = "tap-preferred";
-    require-prior-idle-ms = <125>;
+&sk {
+    quick-release;
+    release-after-ms = <2000>;
 };
-
-&sk { quick-release; };
 
 &sl {
     ignore-modifiers;
@@ -81,6 +78,11 @@
         left_hand_ctrl_combo {
             bindings = <&sk LEFT_CONTROL>;
             key-positions = <14 15>;
+        };
+
+        right_hand_ctrl_combo {
+            bindings = <&sk LCTRL>;
+            key-positions = <20 21>;
         };
     };
 
@@ -170,9 +172,9 @@
 
         NAVIGATION {
             bindings = <
-&trans  &none      &none      &none      &none      &none                  &kp PG_UP         &kp LC(LEFT)    &kp UP_ARROW  &kp LC(RIGHT)  &none  &none
-&trans  &kp LGUI   &kp LALT   &sk LCTRL  &sk LSHFT  &view_open_programs    &kp PAGE_DOWN     &kp LEFT_ARROW  &kp DOWN      &kp RIGHT      &none  &none
-&none   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &none                  &kp C_PLAY_PAUSE  &kp HOME        &none         &kp END        &none  &trans
+&trans  &none      &none      &none      &none      &none                  &kp PG_UP         &kp LC(LEFT)    &kp UP_ARROW  &kp LC(RIGHT)  &none       &none
+&trans  &kp LGUI   &kp LALT   &sk LCTRL  &sk LSHFT  &view_open_programs    &kp PAGE_DOWN     &kp LEFT_ARROW  &kp DOWN      &kp RIGHT      &kp DELETE  &none
+&none   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &none                  &kp C_PLAY_PAUSE  &kp HOME        &none         &kp END        &none       &trans
                               &none      &trans     &trans                 &trans            &none           &none
             >;
 
