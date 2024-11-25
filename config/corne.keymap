@@ -16,10 +16,7 @@
 
 &soft_off { hold-time-ms = <1000>; };
 
-&sk {
-    quick-release;
-    release-after-ms = <2000>;
-};
+&sk { quick-release; };
 
 &sl {
     ignore-modifiers;
@@ -29,21 +26,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-
-        undo_combo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <25 26>;
-        };
-
-        copy_combo {
-            bindings = <&kp LC(C)>;
-            key-positions = <26 27>;
-        };
-
-        paste_combo {
-            bindings = <&kp LC(V)>;
-            key-positions = <27 28>;
-        };
 
         tab_combo {
             bindings = <&kp TAB>;
@@ -58,31 +40,6 @@
         caps_combo {
             bindings = <&kp CAPSLOCK>;
             key-positions = <16 19>;
-        };
-
-        lshift_sk {
-            bindings = <&sk LSHIFT>;
-            key-positions = <19 20>;
-        };
-
-        redo_combo {
-            bindings = <&kp LC(Y)>;
-            key-positions = <7 8>;
-        };
-
-        save_combo {
-            bindings = <&kp LC(S)>;
-            key-positions = <13 14>;
-        };
-
-        left_hand_ctrl_combo {
-            bindings = <&sk LEFT_CONTROL>;
-            key-positions = <14 15>;
-        };
-
-        right_hand_ctrl_combo {
-            bindings = <&sk LCTRL>;
-            key-positions = <20 21>;
         };
     };
 
@@ -130,6 +87,24 @@
 
             label = "VIEW_OPEN_PROGRAMS";
         };
+
+        open_win_terminal: open_win_terminal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp X>,
+                <&macro_release>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp I>;
+
+            label = "OPEN_WIN_TERMINAL";
+            wait-ms = <40>;
+            tap-ms = <25>;
+        };
     };
 
     keymap {
@@ -143,18 +118,18 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE      &kp Q  &kp W  &kp E      &kp R  &kp T          &kp Y          &kp U  &kp I           &kp O    &kp P          &kp DELETE
-&mo 1           &kp A  &kp S  &kp D      &kp F  &kp G          &kp H          &kp J  &kp K           &kp L    &kp SEMICOLON  &mo 1
-&sk LEFT_SHIFT  &kp Z  &kp X  &kp C      &kp V  &kp B          &kp N          &kp M  &kp COMMA       &kp DOT  &kp FSLH       &kp ENTER
-                              &kp LCTRL  &mo 2  &lt 4 SPACE    &kp BACKSPACE  &mo 3  &kp LEFT_SHIFT
+&kp ESCAPE      &kp Q       &kp W           &kp E        &kp R        &kp T          &kp Y          &kp U         &kp I           &kp O       &kp P               &kp DELETE
+&mo 1           &mt LCMD A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G          &kp H          &mt LSHIFT J  &mt LCTRL K     &mt LALT L  &mt LCMD SEMICOLON  &mo 1
+&sk LEFT_SHIFT  &kp Z       &kp X           &kp C        &kp V        &kp B          &kp N          &kp M         &kp COMMA       &kp DOT     &kp FSLH            &kp ENTER
+                                            &kp LCTRL    &mo 2        &lt 4 SPACE    &kp BACKSPACE  &mo 3         &kp LEFT_SHIFT
             >;
         };
 
         MEDIA {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4         &kp LC(GRAVE)    &none     &none           &kp C_VOLUME_UP    &none       &none         &kp PRINTSCREEN
-&none         &none         &none         &none           &vscode_format_code  &none            &none     &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_NEXT  &none         &none
-&none         &none         &none         &bt BT_CLR_ALL  &none                &none            &kp C_PP  &kp C_MUTE      &none              &none       &out OUT_BLE  &out OUT_USB
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4         &kp LC(GRAVE)    &none     &none           &kp C_VOLUME_UP    &none       &kp PRINTSCREEN  &none
+&none         &sk LCMD      &sk LEFT_ALT  &none           &vscode_format_code  &none            &none     &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_NEXT  &none            &none
+&none         &none         &none         &bt BT_CLR_ALL  &none                &none            &kp C_PP  &kp C_MUTE      &none              &none       &out OUT_BLE     &out OUT_USB
                                           &none           &none                &none            &none     &none           &none
             >;
         };
@@ -172,42 +147,26 @@
 
         NAVIGATION {
             bindings = <
-&trans  &none      &none      &none      &none      &none                  &kp PG_UP         &kp LC(LEFT)    &kp UP_ARROW  &kp LC(RIGHT)  &none       &none
-&trans  &kp LGUI   &kp LALT   &sk LCTRL  &sk LSHFT  &view_open_programs    &kp PAGE_DOWN     &kp LEFT_ARROW  &kp DOWN      &kp RIGHT      &kp DELETE  &none
-&none   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &none                  &kp C_PLAY_PAUSE  &kp HOME        &none         &kp END        &none       &trans
-                              &none      &trans     &trans                 &trans            &none           &none
+&trans  &none     &none     &none      &none      &none                  &kp PG_UP         &kp LC(LEFT)    &kp UP_ARROW  &kp LC(RIGHT)  &none  &none
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &view_open_programs    &kp PAGE_DOWN     &kp LEFT_ARROW  &kp DOWN      &kp RIGHT      &none  &none
+&none   &none     &none     &none      &none      &none                  &kp C_PLAY_PAUSE  &kp HOME        &kp DEL       &kp END        &none  &trans
+                            &none      &trans     &trans                 &trans            &none           &none
             >;
 
             label = "NAV";
         };
 
-        NUMBERS {
+        NUMBERS_FUNCTION {
             bindings = <
-&none   &none      &none      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none       &kp N7  &kp N8  &kp N9  &kp LS(EQUAL)  &none
-&trans  &sk LGUI   &kp LALT   &sk LCTRL             &sk LSHFT              &none     &kp LS(N8)  &kp N4  &kp N5  &kp N6  &kp MINUS      &none
-&none   &kp LC(Z)  &kp LC(X)  &kp LC(C)             &kp LC(V)              &none     &kp DOT     &kp N1  &kp N2  &kp N3  &kp FSLH       &trans
-                              &none                 &none                  &trans    &kp N0      &none   &none
+&none   &kp F7  &kp F8  &kp F9  &kp F10  &none     &none          &kp N7        &kp N8        &kp N9           &kp LS(EQUAL)   &none
+&trans  &kp F4  &kp F5  &kp F6  &kp F11  &none     &kp LS(N8)     &mt LSHFT N4  &mt LCTRL N5  &mt LEFT_ALT N6  &mt LGUI MINUS  &none
+&none   &kp F1  &kp F2  &kp F3  &kp F12  &none     &kp DOT        &kp N1        &kp N2        &kp N3           &kp FSLH        &trans
+                        &none   &none    &trans    &kp BACKSPACE  &kp NUMBER_0  &none
             >;
 
-            label = "NUM";
-        };
-
-        FUN {
-            bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-&trans  &kp LGUI  &kp LALT  &sk LCTRL  &sk LSHFT  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F12  &trans
-                            &trans     &trans     &trans    &trans  &trans  &trans
-            >;
+            label = "NUM_FUN";
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        function_layer {
-            if-layers = <2 3>;
-            then-layer = <5>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
