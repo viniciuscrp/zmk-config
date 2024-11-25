@@ -11,7 +11,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    require-prior-idle-ms = <125>;
+    retro-tap;
 };
 
 &soft_off { hold-time-ms = <1000>; };
