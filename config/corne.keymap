@@ -158,10 +158,10 @@
 
         NUMBERS_FUNCTION {
             bindings = <
-&none   &none  &kp F7  &kp F8  &kp F9  &kp F10    &none          &kp N7        &kp N8        &kp N9           &kp LS(EQUAL)   &none
-&trans  &none  &kp F4  &kp F5  &kp F6  &kp F11    &kp LS(N8)     &mt LSHFT N4  &mt LCTRL N5  &mt LEFT_ALT N6  &mt LGUI MINUS  &none
-&none   &none  &kp F1  &kp F2  &kp F3  &kp F12    &kp DOT        &kp N1        &kp N2        &kp N3           &kp FSLH        &trans
-                       &none   &none   &trans     &kp BACKSPACE  &kp NUMBER_0  &none
+&none   &none  &kp F7  &kp F8  &kp F9  &kp F10            &none          &kp N7        &kp N8        &kp N9           &kp LS(EQUAL)   &none
+&trans  &none  &kp F4  &kp F5  &kp F6  &kp F11            &kp LS(N8)     &mt LSHFT N4  &mt LCTRL N5  &mt LEFT_ALT N6  &mt LGUI MINUS  &none
+&none   &none  &kp F1  &kp F2  &kp F3  &mt LC(F12) F12    &kp DOT        &kp N1        &kp N2        &kp N3           &kp FSLH        &trans
+                       &none   &none   &trans             &kp BACKSPACE  &kp NUMBER_0  &none
             >;
 
             label = "NUM_FUN";
