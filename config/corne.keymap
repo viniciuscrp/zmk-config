@@ -97,13 +97,11 @@
                 <&kp X>,
                 <&macro_release>,
                 <&kp LCMD>,
-                <&macro_wait_time 200>,
+                <&macro_wait_time 500>,
                 <&macro_tap>,
                 <&kp I>;
 
             label = "OPEN_WIN_TERMINAL";
-            wait-ms = <40>;
-            tap-ms = <25>;
         };
     };
 
