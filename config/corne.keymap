@@ -117,8 +117,8 @@
 
             bindings = <
 &kp ESCAPE      &kp Q       &kp W           &kp E        &kp R        &kp T          &kp Y          &kp U         &kp I           &kp O       &kp P               &kp DELETE
-&mo 1           &mt LCMD A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G          &kp H          &mt LSHIFT J  &mt LCTRL K     &mt LALT L  &mt LCMD SEMICOLON  &mo 1
-&sk LEFT_SHIFT  &kp Z       &kp X           &kp C        &kp V        &kp B          &kp N          &kp M         &kp COMMA       &kp DOT     &kp FSLH            &kp ENTER
+&mo 1           &mt LCMD A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G          &kp H          &mt LSHIFT J  &mt LCTRL K     &mt LALT L  &mt LCMD SEMICOLON  &kp ENTER
+&sk LEFT_SHIFT  &kp Z       &kp X           &kp C        &kp V        &kp B          &kp N          &kp M         &kp COMMA       &kp DOT     &kp FSLH            &mo 1
                                             &kp LCTRL    &mo 2        &lt 4 SPACE    &kp BACKSPACE  &mo 3         &kp LEFT_SHIFT
             >;
         };
