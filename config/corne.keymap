@@ -30,78 +30,15 @@
             bindings = <&kp TAB>;
             key-positions = <16 15>;
         };
-
-        caps_word_combo {
-            bindings = <&caps_word>;
-            key-positions = <37 40>;
-        };
-
-        caps_combo {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <16 19>;
-        };
     };
 
     macros {
-        vscode_format_code: vscode_format_code {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT &kp LSHIFT>,
-                <&macro_tap>,
-                <&kp F>,
-                <&macro_release>,
-                <&kp LSHFT &kp LALT>;
-
-            label = "VSCODE_FORMAT_CODE";
-        };
-
         cedilla: cedilla {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&kp SINGLE_QUOTE>, <&macro_tap>, <&kp C>;
 
             label = "CEDILLA";
-        };
-
-        tilde_a: tilde_a {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp TILDE>, <&macro_tap>, <&kp A>;
-
-            label = "TILDE_A";
-        };
-
-        view_open_programs: view_open_programs {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_WIN>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_release>,
-                <&kp LWIN>;
-
-            label = "VIEW_OPEN_PROGRAMS";
-        };
-
-        open_win_terminal: open_win_terminal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCMD>,
-                <&macro_tap>,
-                <&kp X>,
-                <&macro_release>,
-                <&kp LCMD>,
-                <&macro_wait_time 500>,
-                <&macro_tap>,
-                <&kp I>;
-
-            label = "OPEN_WIN_TERMINAL";
         };
     };
 
@@ -116,28 +53,28 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &kp Q    &kp W           &kp E        &kp R        &kp T                 &kp Y                   &kp U         &kp I         &kp O       &kp P            &kp DELETE
-&lt 1 ESCAPE    &lt 2 A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G                 &kp H                   &mt LSHIFT J  &mt LCTRL K   &mt LALT L  &lt 2 SEMICOLON  &kp ENTER
-&sk LEFT_SHIFT  &kp Z    &kp X           &kp C        &kp V        &kp B                 &kp N                   &kp M         &kp COMMA     &kp DOT     &kp FSLH         &kp RIGHT_SHIFT
-                                         &caps_word   &mo 4        &mt LEFT_GUI SPACE    &mt LEFT_GUI BACKSPACE  &mo 3         &kp CAPSLOCK
+&mo 1           &kp Q       &kp W           &kp E        &kp R        &kp T          &kp Y            &kp U         &kp I         &kp O       &kp P               &kp DELETE
+&lt 1 ESCAPE    &mt LWIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G          &kp H            &mt LSHIFT J  &mt LCTRL K   &mt LALT L  &mt LGUI SEMICOLON  &kp ENTER
+&sk LEFT_SHIFT  &kp Z       &kp X           &kp C        &kp V        &kp B          &kp N            &kp M         &kp COMMA     &kp DOT     &kp FSLH            &kp RIGHT_SHIFT
+                                            &caps_word   &mo 2        &lt 4 SPACE    &lt 3 BACKSPACE  &mo 2         &kp CAPSLOCK
             >;
         };
 
         MEDIA {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4         &none         &none     &none           &kp C_VOLUME_UP    &none       &kp PRINTSCREEN  &none
-&none         &none         &none         &none         &vscode_format_code  &none         &none     &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_NEXT  &none            &none
-&none         &none         &none         &none         &none                &bt BT_CLR    &kp C_PP  &kp C_MUTE      &none              &none       &out OUT_BLE     &out OUT_USB
-                                          &none         &none                &none         &none     &none           &bt BT_CLR_ALL
+&none  &none         &none         &none         &none         &none         &none     &none           &kp C_VOLUME_UP    &none       &kp PRINTSCREEN  &none
+&none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none         &none     &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_NEXT  &none            &none
+&none  &none         &none         &none         &none         &bt BT_CLR    &kp C_PP  &kp C_MUTE      &none              &none       &out OUT_BLE     &out OUT_USB
+                                   &none         &none         &none         &none     &none           &bt BT_CLR_ALL
             >;
         };
 
         SYMBOLS {
             bindings = <
-&trans  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)     &kp LS(N4)  &kp LS(N5)    &kp QUESTION  &kp EQUAL   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LS(EQUAL)  &none
-&trans  &tilde_a    &kp GRAVE   &kp BACKSLASH  &kp PIPE    &kp LS(N6)    &kp LS(N8)    &kp LS(N9)  &kp LS(LBKT)      &kp LBKT           &kp MINUS      &none
-&none   &none       &none       &cedilla       &kp COLON   &kp LS(N7)    &kp TILDE     &kp LS(N0)  &kp LS(RBKT)      &kp RBKT           &kp LS(MINUS)  &trans
-                                &none          &trans      &trans        &trans        &trans      &trans
+&none  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)     &kp LS(N4)  &kp LS(N5)    &kp QUESTION  &kp EQUAL   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LS(EQUAL)  &none
+&none  &none       &kp GRAVE   &kp BACKSLASH  &kp PIPE    &kp LS(N6)    &kp LS(N8)    &kp LS(N9)  &kp LS(LBKT)      &kp LBKT           &kp MINUS      &none
+&none  &none       &none       &none          &kp COLON   &kp LS(N7)    &kp TILDE     &kp LS(N0)  &kp LS(RBKT)      &kp RBKT           &kp LS(MINUS)  &none
+                               &none          &trans      &trans        &trans        &trans      &trans
             >;
 
             label = "SYM";
@@ -156,10 +93,10 @@
 
         NUMBERS_FUNCTION {
             bindings = <
-&none   &none  &kp F7  &kp F8  &kp F9  &kp F10            &none          &kp N7        &kp N8        &kp N9           &kp LS(EQUAL)   &none
-&trans  &none  &kp F4  &kp F5  &kp F6  &kp F11            &kp LS(N8)     &mt LSHFT N4  &mt LCTRL N5  &mt LEFT_ALT N6  &mt LGUI MINUS  &none
-&none   &none  &kp F1  &kp F2  &kp F3  &mt LC(F12) F12    &kp DOT        &kp N1        &kp N2        &kp N3           &kp FSLH        &trans
-                       &none   &none   &trans             &kp BACKSPACE  &kp NUMBER_0  &none
+&none   &none  &kp F7  &kp F8  &kp F9  &kp F10            &none       &kp N7        &kp N8        &kp N9           &kp LS(EQUAL)   &none
+&trans  &none  &kp F4  &kp F5  &kp F6  &kp F11            &kp LS(N8)  &mt LSHFT N4  &mt LCTRL N5  &mt LEFT_ALT N6  &mt LGUI MINUS  &none
+&none   &none  &kp F1  &kp F2  &kp F3  &mt LC(F12) F12    &kp DOT     &kp N1        &kp N2        &kp N3           &kp FSLH        &trans
+                       &none   &none   &trans             &trans      &kp NUMBER_0  &none
             >;
 
             label = "NUM_FUN";
