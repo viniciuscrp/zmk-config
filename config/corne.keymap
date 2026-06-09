@@ -63,10 +63,10 @@
 
         SYMBOLS {
             bindings = <
-&none  &kp LS(N1)  &kp LS(N2)    &kp LS(N3)     &kp LS(N4)    &kp LS(N5)    &kp PT_QMARK  &kp PT_EQUAL  &kp PT_SQT   &kp PT_DQT   &kp PT_PLUS   &none
-&none  &PT_ACUTE   &kp PT_GRAVE  &kp PT_BSLH    &kp PT_PIPE   &kp PT_CARET  &kp LS(N8)    &kp PT_LPAR   &kp PT_LBRC  &kp PT_LBKT  &kp PT_MINUS  &none
-&none  &none       &none         &PT_C_CEDILLA  &kp PT_COLON  &kp LS(N7)    &kp PT_TILDE  &kp PT_RPAR   &kp PT_RBRC  &kp PT_RBKT  &kp PT_UNDER  &none
-                                 &none          &trans        &trans        &trans        &trans        &trans
+&none  &kp LS(N1)    &kp LS(N2)    &kp LS(N3)     &kp LS(N4)    &kp LS(N5)    &kp PT_QMARK  &kp PT_EQUAL  &kp PT_SQT   &kp PT_DQT   &kp PT_PLUS   &none
+&none  &kp PT_ACUTE  &kp PT_GRAVE  &kp PT_BSLH    &kp PT_PIPE   &kp PT_CARET  &kp LS(N8)    &kp PT_LPAR   &kp PT_LBRC  &kp PT_LBKT  &kp PT_MINUS  &none
+&none  &none         &none         &PT_C_CEDILLA  &kp PT_COLON  &kp LS(N7)    &kp PT_TILDE  &kp PT_RPAR   &kp PT_RBRC  &kp PT_RBKT  &kp PT_UNDER  &none
+                                   &none          &trans        &trans        &trans        &trans        &trans
             >;
 
             label = "SYM";
