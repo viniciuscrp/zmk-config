@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include "keys_pt_abnt2.h"
 
 &mt { flavor = "tap-preferred"; };
 
@@ -32,16 +33,6 @@
         };
     };
 
-    macros {
-        cedilla: cedilla {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp SINGLE_QUOTE>, <&macro_tap>, <&kp C>;
-
-            label = "CEDILLA";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -54,8 +45,8 @@
 
             bindings = <
 &mo 1           &kp Q    &kp W  &kp E        &kp R        &kp T           &kp Y         &kp U            &kp I         &kp O    &kp P            &kp DELETE
-&lt 1 ESCAPE    &lt 2 A  &kp S  &mt LCTRL D  &mt LSHFT F  &kp G           &kp H         &mt LSHIFT J     &mt LCTRL K   &kp L    &lt 2 SEMICOLON  &kp ENTER
-&sk LEFT_SHIFT  &kp Z    &kp X  &kp C        &kp V        &kp B           &kp N         &kp M            &kp COMMA     &kp DOT  &kp FSLH         &kp RIGHT_SHIFT
+&kp ESCAPE      &lt 2 A  &kp S  &mt LCTRL D  &mt LSHFT F  &kp G           &kp H         &mt LSHIFT J     &mt LCTRL K   &kp L    &lt 2 PT_SEMI    &kp ENTER
+&sk PT_BSLH     &kp Z    &kp X  &kp C        &kp V        &kp B           &kp N         &kp M            &kp COMMA     &kp DOT  &kp PT_SLASH     &kp RIGHT_SHIFT
                                 &caps_word   &lt 4 SPACE  &kp LEFT_GUI    &kp LEFT_ALT  &lt 3 BACKSPACE  &kp CAPSLOCK
             >;
         };
@@ -71,10 +62,10 @@
 
         SYMBOLS {
             bindings = <
-&none  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)     &kp LS(N4)  &kp LS(N5)    &kp QUESTION  &kp EQUAL   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LS(EQUAL)  &none
-&none  &none       &kp GRAVE   &kp BACKSLASH  &kp PIPE    &kp LS(N6)    &kp LS(N8)    &kp LS(N9)  &kp LS(LBKT)      &kp LBKT           &kp MINUS      &none
-&none  &none       &none       &cedilla       &kp COLON   &kp LS(N7)    &kp TILDE     &kp LS(N0)  &kp LS(RBKT)      &kp RBKT           &kp LS(MINUS)  &none
-                               &none          &trans      &trans        &trans        &trans      &trans
+&none  &kp LS(N1)  &kp LS(N2)    &kp LS(N3)     &kp LS(N4)    &kp LS(N5)    &kp PT_QMARK  &kp PT_EQUAL  &kp PT_SQT   &kp PT_DQT   &kp PT_PLUS   &none
+&none  &PT_ACUTE   &kp PT_GRAVE  &kp PT_BSLH    &kp PT_PIPE   &kp PT_CARET  &kp LS(N8)    &kp PT_LPAR   &kp PT_LBRC  &kp PT_LBKT  &kp PT_MINUS  &none
+&none  &none       &none         &PT_C_CEDILLA  &kp PT_COLON  &kp LS(N7)    &kp PT_TILDE  &kp PT_RPAR   &kp PT_RBRC  &kp PT_RBKT  &kp PT_UNDER  &none
+                                 &none          &trans        &trans        &trans        &trans        &trans
             >;
 
             label = "SYM";
