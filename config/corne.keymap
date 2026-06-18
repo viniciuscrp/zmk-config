@@ -38,17 +38,11 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
             bindings = <
-&mo 1           &kp Q    &kp W  &kp E        &kp R         &kp T        &kp Y            &kp U         &kp I         &kp O    &kp P          &kp DELETE
-&kp ESCAPE      &lt 2 A  &kp S  &mt LCTRL D  &mt LSHFT F   &kp G        &kp H            &mt LSHIFT J  &mt LCTRL K   &kp L    &lt 2 PT_SEMI  &kp ENTER
-&sk PT_BSLH     &kp Z    &kp X  &kp C        &kp V         &kp B        &kp N            &kp M         &kp COMMA     &kp DOT  &kp PT_SLASH   &kp RIGHT_SHIFT
-                                &caps_word   &kp LEFT_GUI  &lt 4 SPACE  &lt 3 BACKSPACE  &kp LEFT_ALT  &kp CAPSLOCK
+&mo 1        &kp Q                     &kp W  &kp E        &kp R        &kp T            &kp Y         &kp U         &kp I       &kp O    &kp P                            &kp DELETE
+&kp ESCAPE   &lt 2 A                   &kp S  &mt LCTRL D  &mt LSHFT F  &kp G            &kp H         &mt LSHIFT J  &mt LCTRL K &kp L    &lt 2 PT_SEMI                    &kp ENTER
+&sk PT_BSLH  &mt LCTRL(LSHFT(LALT)) Z  &kp X  &kp C        &kp V        &kp B            &kp N         &kp M         &kp COMMA   &kp DOT  &mt LCTRL(LSHFT(LALT)) PT_SLASH  &kp RIGHT_SHIFT
+                                &kp LEFT_GUI  &caps_word   &lt 4 SPACE  &lt 3 BACKSPACE  &kp CAPSLOCK  &kp LEFT_ALT
             >;
         };
 
