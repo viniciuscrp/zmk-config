@@ -34,6 +34,17 @@
         };
     };
 
+    behaviors: {
+        lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
+        }
+    }
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -42,7 +53,7 @@
 &mo 1        &kp Q                  &kp W         &kp E        &kp R        &kp T            &kp Y         &kp U         &kp I       &kp O    &kp P                          &kp DELETE
 &kp ESCAPE   &lt 2 A                &kp S         &mt LCTRL D  &mt LSHFT F  &kp G            &kp H         &mt LSHIFT J  &mt LCTRL K &kp L    &lt 2 PT_SEMI                  &kp ENTER
 &sk PT_BSLH  &mt LC(LS(LA(LGUI))) Z &kp X         &kp C        &kp V        &kp B            &kp N         &kp M         &kp COMMA   &kp DOT  &mt LC(LS(LA(LGUI))) PT_SLASH  &kp RIGHT_SHIFT
-                                &kp LEFT_GUI  &caps_word   &lt 4 SPACE  &lt 3 BACKSPACE  &kp CAPSLOCK  &kp LEFT_ALT
+                                    &kp LEFT_GUI  &caps_word   &lt 4 SPACE  &lt 3 BACKSPACE  &kp CAPSLOCK  &kp LEFT_ALT
             >;
         };
 
