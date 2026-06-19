@@ -102,5 +102,16 @@
 
             label = "NUM_FUN";
         };
+
+        MOUSE {
+            bindings = <
+&none  &none           &kp LC(W)     &none     &kp LC(LS(T))   &kp LC(T)          &none  &kp LA(LEFT)     &mmv MOVE_UP    &kp LA(RIGHT)    &none  &none
+&none  &msc SCRL_LEFT  &mkp MB2      &mkp MB3  &mkp MB1        &msc SCRL_RIGHT    &none  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
+&none  &kp HOME        &msc SCRL_UP  &none     &msc SCRL_DOWN  &kp END            &none  &kp LC(LS(TAB))  &none           &kp LC(TAB)      &none  &none
+                                     &none     &none           &kp LCTRL          &none  &none            &none
+            >;
+
+            label = "MOUSE";
+        };
     };
 };
