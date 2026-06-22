@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: joelspadin
       url-base: https://github.com/joelspadin
+    - name: kbrd-space
+      url-base: https://github.com/kbrd-space
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -15,5 +17,8 @@ manifest:
       remote: joelspadin
       revision: main
       path: modules/lib/zmk-locales
+    - name: zmk-anti-idle
+      remote: kbrd-space
+      revision: main
   self:
     path: config
