@@ -56,7 +56,7 @@
         bindings = <&mmv MOVE_DOWN &mmv MOVE_UP>; // Actions to perform (move mouse down then up)
         tap_ms = <40>; // Duration of each action (ms)
         wait_ms = <200>; // Delay between actions (ms)
-    }
+    };
 
     keymap {
         compatible = "zmk,keymap";
