@@ -54,7 +54,7 @@
         compatible = "zmk,anti-idle-generic";
         interval-ms = <5000>; // How often to send actions (ms)
         bindings = <&mmv MOVE_LEFT &mmv MOVE_RIGHT>; // Actions to perform (move mouse down then up)
-        tap_ms = <500>; // Duration of each action (ms)
+        tap_ms = <80>; // Duration of each action (ms)
         wait_ms = <200>; // Delay between actions (ms)
     };
 
