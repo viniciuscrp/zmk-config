@@ -36,6 +36,7 @@
         tab_combo {
             bindings = <&kp TAB>;
             key-positions = <16 15>;
+						layers = <0>;
         };
     };
 
